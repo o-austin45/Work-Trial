@@ -1,1 +1,1 @@
-# dev-starter-kit
+# Teemill Dev Starter Kit

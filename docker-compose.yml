@@ -1,0 +1,85 @@
+version: '3.7'
+
+services:
+  nginx:
+    build:
+      context: ./
+      dockerfile: ./docker/images/nginx.dockerfile
+    image: teemill/starter-kit:nginx
+    ports:
+      - 9080:80
+      - 9081:443
+    volumes:
+      - .:/var/www/html
+    restart: unless-stopped
+
+  php:
+    build:
+      context: ./
+      dockerfile: ./docker/images/php.dockerfile
+    image: teemill/starter-kit:php
+    volumes:
+      - .:/var/www/html
+    restart: unless-stopped
+
+  composer:
+    build:
+      context: ./
+      dockerfile: ./docker/images/composer.dockerfile
+    image: teemill/starter-kit:composer
+    volumes:
+      - .:/app
+    restart: unless-stopped
+
+  mysql:
+    build:
+      context: ./
+      dockerfile: ./docker/images/mysql.dockerfile
+    image: teemill/starter-kit:mysql
+    volumes:
+      - mysql-database:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=laravel
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    restart: unless-stopped
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 9090:80
+    environment:
+      - PMA_HOST=mysql
+      - PMA_USER=user
+      - PMA_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+    depends_on:
+      - mysql
+    restart: unless-stopped
+
+  tinker:
+    build:
+      context: ./
+      dockerfile: ./docker/images/tinker.dockerfile
+    image: teemill/starter-kit:tinker
+    volumes:
+      - ./:/var/www/html
+      - ~/.config:/root/.config
+    command: bash -c "sleep infinity"
+    restart: unless-stopped
+
+  redis:
+    build:
+      context: ./
+      dockerfile: ./docker/images/redis.dockerfile
+    image: teemill/starter-kit:redis
+    volumes:
+      - redis-database:/data
+    restart: unless-stopped
+
+  # node:
+
+volumes:
+  mysql-database:
+  redis-database:

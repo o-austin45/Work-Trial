@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.3'
 
 services:
   nginx:
@@ -14,6 +14,7 @@ services:
     restart: unless-stopped
 
   php:
+    user: 1001:1001
     build:
       context: ./
       dockerfile: ./docker/images/php.dockerfile
@@ -59,13 +60,14 @@ services:
     restart: unless-stopped
 
   tinker:
+    user: 1001:1001
     build:
       context: ./
       dockerfile: ./docker/images/tinker.dockerfile
     image: teemill/starter-kit:tinker
     volumes:
       - ./:/var/www/html
-      - ~/.config:/root/.config
+      - ~/.config:/.config
     command: bash -c "sleep infinity"
     restart: unless-stopped
 

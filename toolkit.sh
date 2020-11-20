@@ -59,16 +59,28 @@ function tmlstarterkit_composer:dump {
 # Vue / Node
 #
 function tmlstarterkit_vue:install {
+  tmlstarterkit_dir
   tmlstarterkit_container:run node npm install $@
 }
 function tmlstarterkit_vue:uninstall {
+  tmlstarterkit_dir
   tmlstarterkit_container:run node npm uninstall $@
 }
 function tmlstarterkit_vue:start {
+  tmlstarterkit_dir
   tmlstarterkit_container:run node npm run watch $@
 }
 function tmlstarterkit_vue:build {
+  tmlstarterkit_dir
   tmlstarterkit_container:run node npm run production $@
+}
+function tmlstarterkit_vue:stop {
+  tmlstarterkit_dir
+  tmlstarterkit_container:run node npm run production $@
+}
+function tmlstarterkit_vue:stop {
+  tmlstarterkit_dir
+  docker-compose stop node
 }
 
 

@@ -80,7 +80,13 @@ services:
       - redis-database:/data
     restart: unless-stopped
 
-  # node:
+  node:
+    image: node:14
+    ports:
+      - 8080:8080
+    volumes:
+      - ~/teemill/dev-starter-kit:/var/www/html
+    working_dir: /var/www/html
 
 volumes:
   mysql-database:

@@ -59,8 +59,6 @@
                     The Mission
                 </div>
 
-                <example-component></example-component>
-
                 <div class="tasks">
                     To start the dev environment open a command line and type
 

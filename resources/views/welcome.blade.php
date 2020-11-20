@@ -75,6 +75,8 @@
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://vuejs.org/v2/guide/">Vue Docs</a>
                 </div>
+
+                <example-component></example-component>
             </div>
         </div>
     </body>

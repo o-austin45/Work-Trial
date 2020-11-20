@@ -48,6 +48,10 @@
                 font-size: 84px;
             }
 
+            .links {
+                margin-bottom: 4em;
+            }
+
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -71,9 +75,13 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
+                    <a href="https://laravel.com/docs">Laravel Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://vuejs.org/v2/guide/">Vue Docs</a>
+                </div>
+
+                <div class="links">
+                    <a style="padding: 2em; border: 1px solid #323232; " href="{{ route('mission') }}">The mission</a>
                 </div>
 
                 <example-component></example-component>

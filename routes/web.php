@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mission', function () {
-    return view('mission');
-});
+Route
+    ::name('mission')
+    ->get('/mission', function () {
+        return view('mission');
+    });

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export UID
+export GID
+
 tmlstarterkit() {
   # echo "tml $1 ${@:2}" >> ~/odm-toolkit.log
 

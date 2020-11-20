@@ -14,7 +14,7 @@ services:
     restart: unless-stopped
 
   php:
-    user: 1001:1001
+    user: ${UID}:${GID}
     build:
       context: ./
       dockerfile: ./docker/images/php.dockerfile
@@ -60,7 +60,7 @@ services:
     restart: unless-stopped
 
   tinker:
-    user: 1001:1001
+    user: ${UID}:${GID}
     build:
       context: ./
       dockerfile: ./docker/images/tinker.dockerfile

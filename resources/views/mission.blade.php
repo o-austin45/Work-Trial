@@ -60,24 +60,18 @@
                 </div>
 
                 <div class="tasks">
-                    To start the dev environment open a command line and type
-
-                    <span class="code-block">tsk api:start</span>
-
-                    A fresh Laravel app will be available at localhost:9080
-
                     <ul>
-                        <li><a href="https://laravel.com/docs/5.8/controllers">https://laravel.com/docs/5.8/controllers</a></li>
-                        <li><a href="https://laravel.com/docs/5.8/routing">https://laravel.com/docs/5.8/routing</a></li>
+                        <li><a href="https://laravel.com/docs/6.x/controllers">https://laravel.com/docs/6.x/controllers</a></li>
+                        <li><a href="https://laravel.com/docs/6.x/routing">https://laravel.com/docs/6.x/routing</a></li>
                         <li><a href="https://vuejs.org/">https://vuejs.org/</a></li>
                         <li><a href="https://router.vuejs.org/">https://router.vuejs.org/</a></li>
                     </ul>
                     
                     <p>
-                        When using artisan be sure to use ‘tsk’ instead of ‘php’ when using the command line
+                        When using artisan be sure to use ‘tsk’ instead of ‘php’
                     </p>
                     
-                    <h3>Randy images</h3>
+                    <h3>Random images</h3>
                     <ol>
                         <li>Create a controller and routes at /images/asc, /images/desc and /images/random that returns an array of URLs for 4 images in ascending alphabetical file name order, descending order and a random order that varies every time</li>
                         <li>Make three Vue pages at /images/asc/, /images/desc/ and /images/random/ that show the images returned from the above routes</li>
@@ -85,8 +79,8 @@
                         
                     <h3>Animals</h3>
                     <ul>
-                        <li><a href="https://laravel.com/docs/5.8/migrations">https://laravel.com/docs/5.8/migrations</a></li>
-                        <li> <a href="https://laravel.com/docs/5.8/eloquent">https://laravel.com/docs/5.8/eloquent</a></li>
+                        <li><a href="https://laravel.com/docs/6.x/migrations">https://laravel.com/docs/6.x/migrations</a></li>
+                        <li> <a href="https://laravel.com/docs/6.x/eloquent">https://laravel.com/docs/6.x/eloquent</a></li>
                     </ul>
                     <p>A database already exists which can be accessed by going to localhost:9090. You should only need to access the database when checking that your migrations worked</p>
                     <ol>
@@ -116,11 +110,14 @@
                         <li>Create an interface and route for adding new cars and manufacturers</li>
                         <li> Using Laravel middleware, prevent a user from adding new cars and manufacturers unless they also provide a password. The password should be checked against a copy stored in Laravel’s .env file</li>
                         <li>Create an analytics page that shows how many cars there are per manufacturer and fuel type (includes installing Chart js npm)</li>
-                        <li> Create a basic ‘order’ flow for Cars.</li>
-                        <li>                    Add a ‘buy’ button to the car page
+                        <li>
+                            Create a basic ‘order’ flow for Cars.
+                            <ul>
+                                <li>Add a ‘buy’ button to the car page</li>
+                                <li>Add a basic cart page with a ‘place order’ button which creates an order in the database and redirects you to an order receipt page</li>
+                                <li>Add a chart to the analytics page which shows how many times each car has been purchased, and purchases over time</li>
+                            </ul>
                         </li>
-                        <li>Add a basic cart page with a ‘place order’ button which creates an order in the database and redirects you to an order receipt page</li>
-                        <li> Add a chart to the analytics page which shows how many times each car has been purchased, and purchases over time</li>
                         <li>Add a search bar to the car list page. The search bar must be able to search for cars by name and manufacturer name in a single query</li>
                         <li> Track searches, add a table of most popular searches to the analytics page.</li>
                     </ol>

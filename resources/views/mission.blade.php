@@ -7,16 +7,23 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Lato" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
-                font-family: 'Lato', sans-serif;
-                font-weight: 200;
+                color: #323232;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 300;
                 margin: 0 1em;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Poppins', sans-serif;
+                font-weight: bold;
             }
 
             .flex-center {
@@ -31,10 +38,17 @@
 
             .title {
                 text-align: center;
+                font-size: 84px;
+                margin-bottom: 1em;
             }
 
-            .title {
-                font-size: 84px;
+            .tasks {
+                max-width: 75ch;
+                margin-bottom: 25vh;
+            }
+
+            .tasks h2 {
+                margin-top: 2.5em;
             }
 
             .links > a {
@@ -55,34 +69,37 @@
     <body>
         <div id="app" class="flex-center position-ref full-height">
             <div class="content">
-                <div class="title m-b-md">
+                <h1 class="title">
                     The Mission
-                </div>
+                </h1>
+
+
+                <h2>Basic Documentation</h2>
+                <ul>
+                    <li><a href="https://laravel.com/docs/9.x/controllers">https://laravel.com/docs/9.x/controllers</a></li>
+                    <li><a href="https://laravel.com/docs/9.x/routing">https://laravel.com/docs/9.x/routing</a></li>
+                    <li><a href="https://vuejs.org/">https://vuejs.org/</a></li>
+                    <li><a href="https://router.vuejs.org/">https://router.vuejs.org/</a></li>
+                </ul>
 
                 <div class="tasks">
-                    <ul>
-                        <li><a href="https://laravel.com/docs/6.x/controllers">https://laravel.com/docs/6.x/controllers</a></li>
-                        <li><a href="https://laravel.com/docs/6.x/routing">https://laravel.com/docs/6.x/routing</a></li>
-                        <li><a href="https://vuejs.org/">https://vuejs.org/</a></li>
-                        <li><a href="https://router.vuejs.org/">https://router.vuejs.org/</a></li>
-                    </ul>
-                    
-                    <p>
-                        When using artisan be sure to use ‘tsk’ instead of ‘php’
-                    </p>
-                    
-                    <h3>Random images</h3>
+                    <h2>Random images</h2>
                     <ol>
                         <li>Create a controller and routes at /images/asc, /images/desc and /images/random that returns an array of URLs for 4 images in ascending alphabetical file name order, descending order and a random order that varies every time</li>
                         <li>Make three Vue pages at /images/asc/, /images/desc/ and /images/random/ that show the images returned from the above routes</li>
                     </ol>
                         
-                    <h3>Animals</h3>
+                    <h2>Animals</h2>
                     <ul>
-                        <li><a href="https://laravel.com/docs/6.x/migrations">https://laravel.com/docs/6.x/migrations</a></li>
-                        <li> <a href="https://laravel.com/docs/6.x/eloquent">https://laravel.com/docs/6.x/eloquent</a></li>
+                        <li><a href="https://laravel.com/docs/9.x/migrations">https://laravel.com/docs/9.x/migrations</a></li>
+                        <li> <a href="https://laravel.com/docs/9.x/eloquent">https://laravel.com/docs/9.x/eloquent</a></li>
                     </ul>
-                    <p>A database already exists which can be accessed by going to localhost:9090. You should only need to access the database when checking that your migrations worked</p>
+
+                    <p>
+                        A database already exists which can be accessed by going to localhost:9090.
+                        You should only need to access the database when checking that your migrations worked
+                    </p>
+
                     <ol>
                         <li>Create a model and database table for animals. The table should contain the following fields:
                         <q>id, name, class (mammal, bird, etc.), conservation_status and latin_name.</q> Enter data for 5 different animals (find the info on Wikipedia)</li>
@@ -92,9 +109,9 @@
                         <li>Create a Vue page that shows all the stored data about the animal. Clicking on an animal in the table you made in step 3 should navigate to that animal’s page</li>
                     </ol>
                     
-                    <h3>Cars, manufacturers and fuel types</h3>
+                    <h2>Cars, manufacturers and fuel types</h2>
                     <ul>
-                        <li><a href="https://laravel.com/docs/6.x/eloquent-relationships">https://laravel.com/docs/6.x/eloquent-relationships</a></li>
+                        <li><a href="https://laravel.com/docs/9.x/eloquent-relationships">https://laravel.com/docs/9.x/eloquent-relationships</a></li>
                     </ul>
                     <ol>
                         <li>Create models and tables for Car, Manufacturer and FuelType. These models should be linked via relations. One manufacturer has many cars, one car has one manufacturer. One car has one fuel type.One fuel type has many cars. Manufacturer and fuel type are not linked. The tables should have the following fields
@@ -105,7 +122,11 @@
                         <li> Create the controller and routes for /cars/list/ and /cars/get/1/</li>
                         <li>Modify the /cars/list/ command to take GET parameters  ?manufacturer=...?fueltype=...</li>
                         <li>Make a Vue page for the car list and a Vue page for each individual car.</li>
-                        <h4>Stretch Goals</h4>
+                        
+                    </ol>
+
+                    <h3>Stretch Goals for the cars project</h3>
+                    <ol>
                         <li>Make all of your car and manufacturer routes utilise Laravel resources</li>
                         <li>Create an interface and route for adding new cars and manufacturers</li>
                         <li> Using Laravel middleware, prevent a user from adding new cars and manufacturers unless they also provide a password. The password should be checked against a copy stored in Laravel’s .env file</li>

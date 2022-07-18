@@ -1,0 +1,13 @@
+DB::table("animals")-insert([["name"=>"chicken","latin_name"=>"Gallus gallus domesticus", "class"=>"bird", "conservation_status"=>"not_endangered"]]);
+DB::table("animals")->insert([["name"=>"chicken","latin_name"=>"Gallus gallus domesticus", "class"=>"bird", "conservation_status"=>"not_endangered"]]);
+DB::TABLE("animals2)->insert([["name"=>"crocodile","latin_name"=>"Crocodylidae", "class"=>"reptile","conservation_status"=>"not_endangered"],["name"=>"house_spider","latin_name"=>"Tegenaria domestica","class"=>"insect","conservation_status"=>"not_endangered"]]);
+
+>>> DB::TABLE("animals")->insert([["name"=>"crocodile","latin_name"=>"Crocodylidae", "class"=>"reptile","conservation_status"=>"not_endangered"]]);
+DB::table("animals")-insert([["name"=>"crocodile","latin_name"=>"Crocodylidae", "class"=>"reptile", "conservation_status"=>"not_endangered"]]);
+DB::table("animals")->([["name"=>"crocodile","latin_name"=>"Crocodylidae", "class"=>"reptile", "conservation_status"=>"not_endangered"]]);
+DB::table("animals")->insert([["name"=>"crocodile","latin_name"=>"Crocodylidae", "class"=>"reptile", "conservation_status"=>"not_endangered"]]);
+DB::table("animals")->insert([["name"=>"house_spider","latin_name"=>"Tegemaria domestica", "class"=>"insect", "conservation_status"=>"not_endangered"]]);
+DB::table("animals")->insert([["name"=>"elephant","latin_name"=>"Loxodonta", "class"=>"mammal", "conservation_status"=>"endangered"]]);
+DB::table("animals")->insert([["name"=>"koala","latin_name"=>"Phascolarctos cinereus", "class"=>"mammal", "conservation_status"=>"endangered"]]);
+docker-compose run --rm tinker php artisan make:controller Animals
+#
